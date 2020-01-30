@@ -4,6 +4,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" type="text/css" href="style-font.css">
       <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
       <title>CAT RODEO</title>
       <link rel="icon" type="image/png" href="image/favicon/cat-rodeo-favicon-2.png" />
@@ -108,7 +109,7 @@
 
           <div id="videos" class="margin-reduit">
             <h2>VIDEOS</h2>
-            <div class="videos">
+            <div id="myVideos" class="videos">
               <div class="rectangle-videos"><img src="image/video-1.jpg"></div>   
               <div class="rectangle-videos"><img src="image/video-2.jpg"></div>
               <div class="rectangle-videos"><img src="image/video-3.jpg"></div>
@@ -124,7 +125,7 @@
           <div id="music" class="margin-reduit">
             <h2>MUSIC</h2>
             <div class="music">
-              <div class="rectangle-music"></div>
+              <div class="rectangle-music" style="text-align: center; padding: 100px 0;">IN BUILDING...</div>
             </div>
           </div>
 
@@ -132,8 +133,8 @@
           <div id="photos" class="margin-reduit">
             <h2>PHOTOS</h2>
 
-            <div class="photos">
-              <div class="rectangle-photos"><img src="image/photo-1.jpg"></div>
+            <div id="myPhotos" class="photos">
+              <div class="rectangle-photos"><img alt="Pochette Cat Rodeo" src="image/photo-1.jpg"></div>
               <div class="rectangle-photos"><img src="image/photo-2.jpg"></div>
               <div class="rectangle-photos"><img src="image/photo-3.jpg"></div>
               <div class="rectangle-photos"><img src="image/photo-4.jpg"></div>
@@ -199,12 +200,78 @@
                 </div>
               </div>
             </div>
-            
           </div>
+
+          <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="img01">
+                <div id="caption"></div>
+              </div>
 
           <!-- <h1 style="text-align: center">Hi people, we are ROCK IN PARIS (lol)</h1> -->
       </main>
 
+      <script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+var photos = document.getElementById("myPhotos");
+
+photos.addEventListener("click", event => {
+  if (event.target.tagName === "IMG") {
+    console.log("click sur une image");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    // var img = document.getElementById("myImg");
+    var img = event.target;
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    captionText.innerHTML = img.alt;
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+  }
+});
+
+
+var videos = document.getElementById("myVideos");
+
+videos.addEventListener("click", event => {
+  if (event.target.tagName === "IMG") {
+    console.log("click sur une video");
+
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    // var img = document.getElementById("myImg");
+    var img = event.target;
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    
+    modal.style.display = "block";
+    modalImg.src = img.src;
+    captionText.innerHTML = img.alt;
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+  }
+});
+
+
+
+</script>
 
     </body>
 
