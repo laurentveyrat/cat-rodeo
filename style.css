@@ -57,6 +57,7 @@ div:target {
   /*background-color: rgba(0, 255, 0, .5);*/
   background-color: black;
   /*height: 78px;*/
+  border-bottom: 1px solid grey;
 }
 
 
@@ -157,7 +158,7 @@ img.main-image {
 	width: 100%;
 	height: 90vh;
 	object-fit: cover;
-	margin-top: 78px;
+	margin-top: 75px;
 	/*position: relative;*/
 }
 
@@ -411,9 +412,10 @@ img.main-image {
 }
 
 .rectangle-videos {
-	/*background-color: orange;*/
+	
 	width: 100%;
 	height: 100%;
+	/*background-color: orange;*/
 	/*border: 3px solid red;*/
 }
 
@@ -436,12 +438,67 @@ img.main-image {
 /* MUSIC */
 
 .rectangle-music {
-	background-color: purple;
-	height: 300px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	height: 500px;
 	width: 100%;
 	margin: 10px 0px;
-	border: 3px solid red;
+	/*border: 3px solid red;*/
+	/*background-color: purple;*/
 }
+
+.pochette-music {
+	/*display: flex;*/
+	/*align-content: flex-start;*/
+	
+	/*background: url("image/music/fire-on-the-mountain.jpg");*/
+	background: top / contain no-repeat url("image/music/fire-on-the-mountain.jpg");
+	width: 50%;
+	height: 100%;
+	/*background-color: yellow;*/
+	/*border: 3px solid red;*/
+
+}
+
+.sound-music {
+	/*display: flex;*/
+	
+	/*width: auto;*/
+	height: 100%;
+	/*background-color: yellow;*/
+	/*border: 3px solid red;*/
+}
+
+@media only screen and (max-width: 850px) {
+	.sound-music {
+		width: 40%;
+	}
+	.rectangle-music {
+		justify-content: space-around;
+		height: 400px;
+	}
+
+}
+
+@media only screen and (max-width: 750px) {
+	.sound-music {
+		width: 45%;
+	}
+	.rectangle-music {
+		justify-content: space-between;
+		height: 350px;
+	}
+	
+}
+
+@media only screen and (max-width: 600px) {
+	.sound-music {
+		width: 47%;
+	}
+}
+
 
 /* ---MUSIC--- */
 
