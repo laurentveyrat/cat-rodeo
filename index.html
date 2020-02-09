@@ -173,9 +173,9 @@
               <div class="rectangle-contact">
                 <div class="contact-form">
                   <form>
-                    <input type="text" class="rectangle-name" id="Name" name="Name" placeholder="Name">
-                    <input type="email" class="rectangle-mail" id="Mail" name="Mail" placeholder="Email Address">
-                    <input type="text" class="rectangle-message" id="Message" name="Message" placeholder="Message..."> 
+                    <input type="text" class="rectangle-name" id="name" name="name" placeholder="Name">
+                    <input type="email" class="rectangle-mail" id="mail" name="mail" placeholder="Email Address">
+                    <input type="text" class="rectangle-message" id="message" name="message" placeholder="Message..."> 
                     <input type="submit" value="SUBMIT">
                   </form>
                 </div>
@@ -209,17 +209,66 @@
   </a>
 
 </div>
+               <div id="premier_formulaire" style="display: none">
                 <div>
-                  <form class="form-follow">
-                      <input type="email" class="rectangle-mail" id="Mail" name="Mail" placeholder="Email Address">
+                  <form class="form-follow1 form-follow">
+                      
+                      <input type="email" class="rectangle-mail" id="mail" name="mail" placeholder="Email Address">
                       <input type="submit" value="JOIN">
-                    </form>
+           
+                  </form>
                 </div>
                 <div>
                   <label class="pa0 ma0 lh-copy f6 pointer">
                     <input type="checkbox"><span class="terms">I agree to the <strong>Terms and Conditions</strong></span>
                   </label>
                 </div>
+               </div>
+
+
+
+
+                <!-- Begin Mailchimp Signup Form -->
+                <div id="mc_embed_signup" >
+                <form action="https://catrodeo.us4.list-manage.com/subscribe/post?u=361f58b13d23169917ba26f6a&amp;id=972ef4f895" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll" class="form-follow form-follow1">
+                  
+                  <div class="mc-field-group">
+                    <label for="mce-EMAIL"></label>
+                    <input type="email" value="" name="EMAIL" class="required email rectangle-mail" placeholder="Email Address" id="mce-EMAIL" required>
+                  </div>
+
+                   
+                       <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                      <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                        <input type="text" name="b_361f58b13d23169917ba26f6a_972ef4f895" tabindex="-1" value="">
+                      </div>
+
+                      <div class="clear">
+                        <input type="submit" value="JOIN" name="subscribe" id="mc-embedded-subscribe">
+                      </div>
+
+                    </div>
+
+                    <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display:none; color: red; font-weight: bold">Please check the conditions below !</div>
+                      <div class="response" id="mce-success-response"style="display:none; color: green; font-weight: bold">Thanks for your trust.</div>
+                    </div>
+
+                    <div>
+                        <label class="pa0 ma0 lh-copy f6 pointer">
+                          <input id="myCheckbox" type="checkbox">
+                            <span class="terms">I agree to the <strong>Terms and Conditions</strong></span>
+                        </label>
+                      </div>
+                </form>
+                </div>
+
+
+
+
+                <!--End mc_embed_signup-->
+
               </div>
             </div>
           </div>
@@ -295,6 +344,61 @@ videos.addEventListener("click", event => {
     }
   }
 });
+
+
+
+
+
+
+
+
+/* Checkbox et bouton Submit */
+
+const messageErreur = document.getElementById("mce-error-response");
+const messageSucces = document.getElementById("mce-success-response");
+
+const myCheck = document.getElementById("myCheckbox");
+
+// const buttonSubmit = document.getElementById("mc-embedded-subscribe");
+// buttonSubmit.addEventListener("click", e => {
+//   e.preventDefault();
+//   if (myCheck.checked) {
+//     messageSucces.style.display = "inline";
+//   }
+//   else {
+//     messageErreur.style.display = "inline";
+//     e.stopPropagation();
+//   }
+// });
+
+function afficheMessageSucces() {
+  messageSucces.style.display = "inline";
+}
+
+function afficheMessageErreur() {
+  messageErreur.style.display = "inline";
+  setTimeout(() => {
+    messageErreur.style.display = "none";
+  }, 5000)
+}
+
+
+function envoiForm(event) {
+  // event.preventDefault();
+  if (myCheck.checked) {
+    afficheMessageSucces();
+    
+  }
+  else {
+    afficheMessageErreur();
+    event.preventDefault();
+  }
+}
+
+const formFollow = document.getElementById("mc-embedded-subscribe-form");
+formFollow.addEventListener("submit", envoiForm, false);
+
+
 
 </script>
 

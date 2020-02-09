@@ -202,17 +202,6 @@ div.background-main-image {
 }
 
 
-@media only screen and (max-width: 830px) {
-	.tickets, .button {
-		font-size: 20px !important;
-	}
-}
-
-@media only screen and (max-width: 630px) {
-	.tickets, .button {
-		font-size: 15px !important;
-	}
-}
 
 
 
@@ -226,7 +215,7 @@ div.background-main-image {
   text-align: center;
   font-size: 25px;
   padding: 6px;
-  width: 140px;
+  width: 160px;
   transition: all 0.5s;
   cursor: pointer;
   font-weight: 500;
@@ -256,6 +245,25 @@ div.background-main-image {
 .button:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+
+@media only screen and (max-width: 830px) {
+	.tickets, .button {
+		font-size: 20px !important;
+	}
+	.button {
+		width: 140px;
+	}
+}
+
+@media only screen and (max-width: 630px) {
+	.tickets, .button {
+		font-size: 15px !important;
+	}
+	.button {
+		width: 120px;
+	}
 }
 
 /* ---TOUR--- */
@@ -305,7 +313,7 @@ div.background-main-image {
 .news-image {
 	display: block;
 	position: relative;
-	background-color: #FF4081;
+	/*background-color: #FF4081;*/
 	width: 230px;
 	height: 230px;
 	float: right;
@@ -806,6 +814,24 @@ input[type=submit]:hover {
 
 /* FOLLOW */
 
+
+.rectangle-mail#mce-EMAIL {
+	background-color: #757575;
+	color: white;
+	/*box-sizing: border-box;*/
+	height: 53px;
+	width: 100%;
+	/*margin: 10px 0px;*/
+	/*border: 3px solid red;*/
+	border: none;
+}
+
+
+.rectangle-mail#mce-EMAIL::placeholder {
+	color: white;
+	font-weight: bold;
+}
+
 #follow {
 	display: block;
 	background: white;
@@ -877,25 +903,25 @@ input[type=submit]:hover {
 	}
 }
 
-.form-follow {
-	display: flex;
-	align-items: center;
-}
 
-.form-follow input[type=submit] {
+
+.form-follow1 input[type=submit] {
   /*background-color: #ff5722;*/
   border-radius: 0px;
-  width: 50%;
+  /*width: 50%;*/
   border: none;
   color: white;
-  padding: 11px 32px;
-  /*height: 10%;*/
+  padding: 12px 32px;
   text-decoration: none;
   margin: 0;
   cursor: pointer;
-  height: 80%;
   font-size: 25px;
   font-weight: 500;
+}
+
+.form-follow {
+	display: flex;
+	align-items: center;
 }
 
 
@@ -904,6 +930,19 @@ input[type=submit]:hover {
 	text-align: left;
 	/*border: solid green 2px;*/
 }
+
+form#mc-embedded-subscribe-form div.mc-field-group {
+	/*display: flex;*/
+	width: 100%;
+}
+
+form#mc-embedded-subscribe-form div.clear {
+	/*display: flex;*/
+	width: 50%;
+}
+
+
+
 
 
 
