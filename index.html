@@ -209,7 +209,7 @@
   </a>
 
 </div>
-               <div id="premier_formulaire" style="display: none">
+               <!-- <div id="premier_formulaire" style="display: none">
                 <div>
                   <form class="form-follow1 form-follow">
                       
@@ -223,7 +223,7 @@
                     <input type="checkbox"><span class="terms">I agree to the <strong>Terms and Conditions</strong></span>
                   </label>
                 </div>
-               </div>
+               </div> -->
 
 
 
@@ -250,8 +250,9 @@
 
                     </div>
 
-                    <div id="mce-responses" class="clear">
-                      <div class="response" id="mce-error-response" style="display:none; color: red; font-weight: bold">Please check the conditions below !</div>
+                    <div id="mce-responses">
+                      <div class="response" id="mce-error-response-checkbox" style="display:none; color: red; font-weight: bold">Please check the conditions below !</div>
+                      <div class="response" id="mce-error-response-mail" style="display:none; color: red; font-weight: bold">Please verify your address !</div>
                       <div class="response" id="mce-success-response"style="display:none; color: green; font-weight: bold">Thanks for your trust.</div>
                     </div>
 
@@ -361,10 +362,13 @@ videos.addEventListener("click", event => {
 
 /* Checkbox et bouton Submit */
 
-const messageErreur = document.getElementById("mce-error-response");
+const messageErreurCheckboxNonCocher = document.getElementById("mce-error-response-checkbox");
+const messageErreurMailNonValide = document.getElementById("mce-error-response-mail");
 const messageSucces = document.getElementById("mce-success-response");
 
 const myCheck = document.getElementById("myCheckbox");
+
+const inputEmail = document.getElementById("mce-EMAIL");
 
 // const buttonSubmit = document.getElementById("mc-embedded-subscribe");
 // buttonSubmit.addEventListener("click", e => {
@@ -382,7 +386,8 @@ function afficheMessageSucces() {
   messageSucces.style.display = "inline";
 }
 
-function afficheMessageErreur() {
+function afficheMessageErreur(errorType) {
+  const messageErreur = ((errorType === "mailNonValide") ? messageErreurMailNonValide : messageErreurCheckboxNonCocher);
   messageErreur.style.display = "inline";
   setTimeout(() => {
     messageErreur.style.display = "none";
@@ -391,13 +396,14 @@ function afficheMessageErreur() {
 
 
 function envoiForm(event) {
-  // event.preventDefault();
-  if (myCheck.checked) {
+  const mail = inputEmail.value;
+  const emailReg =  /^([\w-\.]+)@((?:[\w]+\.)+)([a-zA-Z]{2,4})/i;
+
+  if (myCheck.checked && emailReg.test(mail)) {
     afficheMessageSucces();
-    
   }
   else {
-    afficheMessageErreur();
+    myCheck.checked ? afficheMessageErreur("mailNonValide") : afficheMessageErreur("checkboxNonCocher");
     event.preventDefault();
   }
 }
