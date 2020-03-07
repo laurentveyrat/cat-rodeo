@@ -38,7 +38,7 @@ div:target {
 
 /* HEADER */
 
-header {
+header.main-page {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -55,25 +55,32 @@ header {
   /*justify-content: center;*/
   flex-direction: row;
   align-content: center;
-  padding: 0 5px;
+  /*padding: 0 5px;*/
   /*background-color: rgba(0, 255, 0, .5);*/
-  background-color: black;
+  /*background-color: black;*/
   /*height: 78px;*/
-  border-bottom: 1px solid grey;
+  /*border-bottom: 1px solid grey;*/
 }
 
 
 .myHeader div {
   /*border: 2px solid green;*/
-  
+  /*padding: 0 5px;*/
 }
 
 .logo {
   flex-grow: 1;
   flex-shrink: 1;
+  display: inline-block;
   width: auto;
   /*border: 2px solid red;*/
   margin-left: 50px;
+  padding: 0 10px;
+}
+
+.icon-menu {
+	display: inline-block;
+    width: 33%;
 }
 
 .nav {
@@ -130,15 +137,18 @@ header {
 	.logo {
 		margin-left: 20px;
 	}
+	ul#menu-vertical.menu-flex {
+		font-size: 16px;
+	}
 }
 
 @media only screen and (max-width: 730px) {
 	.logo h1 {
 		text-align: center;
 	}
-	.nav, .logo {
-		margin: 0 30px;
-	}
+	/*.nav, .logo {
+		margin: 0 20px;
+	}*/
 }
 
 @media only screen and (max-width: 545px) {
@@ -176,12 +186,136 @@ div.background-main-image {
 
 @media only screen and (max-width: 550px) {
 	div.background-main-image {	
-		margin-top: 80px;
+		/*margin-top: 80px;*/
 	}
 }
 
 
 /* ---HEADER--- */
+
+/* ---HEADER copied on Test dev star wars--- */
+
+.icon-menu a {
+	cursor: pointer ;
+}
+
+nav#menu-fixe {
+	position: fixed;
+	color: white;
+	width: 100%;
+	height: 82px;
+	font-family: "Open Sans";
+	font-size: 18px;
+	font-weight: 500;
+
+
+	margin: 0 auto;
+	/*background-color: none !important;*/
+	
+	/*border: 2px solid red;*/
+	z-index: 1;
+
+	background-color: rgba(0, 0, 0, .7);
+}
+
+nav#menu-fixe li {
+	list-style: none;
+	padding: 0px 10px;
+	/*border: solid red;*/
+}
+
+#menu-hamburger, #menu-close {
+	display: none;
+}
+
+
+.menu-flex {
+  overflow: hidden;
+  /*background-color: #333;*/
+}
+
+.menu-flex a {
+  float: left;
+  display: block;
+  text-align: center;
+}
+
+ul.menu-flex {
+	display: inline-flex;
+	justify-content: space-around;
+	align-items: center;
+	margin: auto;
+    height: 100%;
+    width: 65%;
+}
+
+ul#menu-vertical.menu-flex {
+	padding: 0;
+}
+
+@media screen and (max-width: 700px) {
+	header {
+		/*height: 55vh;*/
+		/*position: fixed;
+		top: 0;*/
+		/*background: black;*/
+	}
+
+	nav#menu-fixe.responsive {
+		background-color: rgba(0, 0, 0, .9);
+		height: 320px;
+	}
+
+	
+	ul#menu-vertical.menu-flex {
+		display: none;
+	}
+
+	ul#menu-vertical.menu-flex.responsive {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		line-height: 42px;
+		margin-top: 50px;
+	    /*height: 100%;*/
+	}
+
+	div.icon-menu {
+		display: block;
+		/*display: inline-block;*/
+    	width: 100%;
+	}
+	
+	#menu-close {
+		float: left;
+		position: relative;
+		top: 25px;
+		left: 25px;
+	}
+	#menu-close.active, #menu-hamburger.active {
+		display: block;
+	}
+	#menu-close.disabled, #menu-hamburger.disabled, .logo.disabled {
+		display: none;
+	}
+	.logo.active {
+		display: inline-block;
+	}
+	#menu-hamburger {
+		float: right;
+		position: relative;
+		margin: 30px;
+		/*top: 15px;*/
+		/*right: 15px;*/
+	}
+	ul.menu-flex.disabled, .disabled {
+		/*display: none;*/
+	}
+}
+
+
+/* ---HEADER copied on Test dev star wars--- */
 
 
 
@@ -276,6 +410,7 @@ div.background-main-image {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
+	/*float: left;*/
 	/*margin-left: 30px;
 	margin-right: 50px;*/
 	/*border: 2px solid green;*/
@@ -292,7 +427,7 @@ div.background-main-image {
 
 
 @media only screen and (min-width: 870px) {
-	.news-1, .news-3 {
+	.news-4, .news-2 {
 		margin-top: 100px;
 	}
 }
@@ -385,6 +520,15 @@ div.background-main-image {
 .view-more:hover {
   background-color: #555555;
   color: white;
+}
+
+
+
+.img-news {
+	display: block;
+	margin: 50px auto 0;
+	width: 50%;
+	height: auto;
 }
 
 /* ---NEWS--- */
@@ -1031,10 +1175,13 @@ form#mc-embedded-subscribe-form div.clear {
 
 /* FOOTER */
 
-footer {
-	/*background-color: black;*/
+footer#footer-news {
+	background-color: black;
 	/*height: 50px;*/
 	/*border: 3px solid red;*/
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
 }
 
 .footer {

@@ -10,9 +10,11 @@
       <link rel="icon" type="image/png" href="image/favicon/cat-rodeo-favicon-2.png" />
     </head>
     <body>
-      <header>
+      <header class="main-page">
         <div class="myHeader">
-          <div class="logo">
+
+
+          <!-- <div class="logo">
             <h1><a href="#">C<span class="A-orange">A</span>T RODEO</a></h1>
           </div>
           <nav class="nav">
@@ -22,12 +24,53 @@
             <div><p><a href="#music">MUSIC</a></p></div>
             <div><p><a href="#photos">PHOTOS</a></p></div>
             <div><p><a href="#contact">CONTACT</a></p></div>
+          </nav> -->
+
+
+
+          <nav id="menu-fixe" class="myMenu-fixe">
+            
+              
+
+            <div class="icon-menu">
+              <div id="logo-nav" class="logo active">
+                <h1><a href="#">C<span class="A-orange">A</span>T RODEO</a></h1>
+              </div>
+
+              <div id="menu-close" class="disabled">
+                <a onclick="menuResponsive()"><img src="image/icons/close.png"></a>
+              </div>
+              <div id="menu-hamburger" class="active">
+                <a onclick="menuResponsive()"><img src="image/icons/menu.png"></a>
+              </div>
+            </div>
+           
+            
+            
+            
+              <ul id="menu-vertical" class="menu-flex">
+                <li><a href="#tour">TOUR</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#videos">VIDEOS</a></li>
+                <li><a href="#music">MUSIC</a></li>
+                <li><a href="#photos">PHOTOS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+              </ul>
+            
+            
           </nav>
+
+
+
+
+
+
+
+
         </div>
         <div class="background-main-image">
           <!-- <img class="main-image" src="image\photo-large\groupe.jpg" > -->
         </div>
-        
       </header>
 
       <main>
@@ -40,13 +83,8 @@
               <button class="button"><span>TICKETS </span></button>
             </div>
             <div class="tickets">
-              <span class="date">APR 7, 2020</span>
-              <span class="location">LA BOULE NOIRE</span>
-              <button class="button"><span>TICKETS </span></button>
-            </div>
-            <div class="tickets">
-              <span class="date">MAY 19, 2020</span>
-              <span class="location">L'OLYMPIA</span>
+              <span class="date">APR 14, 2020</span>
+              <span class="location">DUBLIN CASTLE, LONDON</span>
               <button class="button"><span>TICKETS </span></button>
             </div>
           </div>
@@ -55,9 +93,9 @@
           <div id="news" class="margin-reduit">
             <h2>NEWS</h2>
             <div class="news">
-              <div class="rectangle-news news-1">
+             <div class="rectangle-news news-5">
                 <div class="news-image">
-                   <img src="image/news-1.jpg">
+                   <img src="image/news-5.jpg">
                 </div>
                 <div class="news-text">
                   <div class="news-infos">
@@ -67,9 +105,9 @@
                   </div>
                 </div> 
               </div>
-               <div class="rectangle-news news-2">
+              <div class="rectangle-news news-4">
                 <div class="news-image">
-                   <img src="image/news-2.jpg">
+                   <img src="image/news-4.jpg">
                 </div>
                 <div class="news-text">
                   <div class="news-infos">
@@ -79,9 +117,21 @@
                   </div>
                 </div> 
               </div>
-               <div class="rectangle-news news-3">
+              <div class="rectangle-news news-3">
                 <div class="news-image">
                    <img src="image/news-3.jpg">
+                </div>
+                <div class="news-text">
+                  <div class="news-infos">
+                    <h3 class="news-titre">CONCERT<br>TRUSKEL</h3>
+                    <h4 class="news-date">23 NOV 2019</h4>
+                    <button class="view-more">VIEW MORE</button>
+                  </div>
+                </div> 
+              </div>
+              <div class="rectangle-news news-2">
+                <div class="news-image">
+                   <img src="image/news-2.jpg">
                 </div>
                 <div class="news-text">
                   <div class="news-infos">
@@ -91,15 +141,16 @@
                   </div>
                 </div> 
               </div>
-               <div class="rectangle-news news-4">
+              <div class="rectangle-news news-1">
                 <div class="news-image">
-                   <img src="image/news-4.jpg">
+                   <img src="image/news-1.jpg">
                 </div>
                 <div class="news-text">
                   <div class="news-infos">
                     <h3 class="news-titre">1ST EP RECORDING</h3>
                     <h4 class="news-date">25 OCT 2019</h4>
                     <button class="view-more">VIEW MORE</button>
+                    <!-- <a href="news/news-1.html"><button class="view-more">VIEW MORE</button></a> -->
                   </div>
                 </div> 
               </div>
@@ -411,6 +462,36 @@ function envoiForm(event) {
 const formFollow = document.getElementById("mc-embedded-subscribe-form");
 formFollow.addEventListener("submit", envoiForm, false);
 
+
+
+
+
+
+
+/* Menu responsive */
+
+const menuHamburger = document.getElementById("menu-hamburger");
+const menuClose = document.getElementById("menu-close");
+const menuFixe = document.getElementById("menu-fixe");
+const logo = document.getElementById("logo-nav");
+
+const menuVertical = document.getElementById("menu-vertical");
+
+function menuResponsive() {
+  if(menuFixe.className === "myMenu-fixe") {
+    menuFixe.className += " responsive";
+    menuVertical.className += " responsive";
+    menuHamburger.className = 'disabled';
+    menuClose.className = 'active';
+    logo.className = 'logo disabled';
+  } else {
+    menuFixe.className = "myMenu-fixe";
+    menuVertical.className = "menu-flex";
+    menuHamburger.className = 'active';
+    menuClose.className = 'disabled';
+    logo.className = 'logo active';
+  }
+}
 
 
 </script>
