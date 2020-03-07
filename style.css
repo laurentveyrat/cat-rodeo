@@ -109,6 +109,31 @@ header.main-page {
 	color: white;
 }
 
+.logo .A-orange {
+	color: #FF9800;
+}
+
+.main-image {
+	/*display: block;*/
+	width: 100%;
+	height: 90vh;
+	object-fit: cover;
+	margin-top: 75px;
+	/*position: relative;*/
+}
+
+div.background-main-image {
+	display: block;
+	background: center / cover no-repeat url("image/photo-large/groupe.jpg");
+	width: 100%;
+	/*margin: 0;
+	padding: 0;*/
+	/*background-position: center 25%;*/
+	/*height: 90vh;*/
+	/*background-color: yellow;*/
+	/*border: 3px solid blue;*/
+}
+
 @media only screen and (max-width: 950px) {
 	.logo h1 {
 		font-size: 30px;
@@ -158,30 +183,6 @@ header.main-page {
 		/*justify-content: space-evenly;*/
 	}
 
-}
-
-
-.logo .A-orange {
-	color: #FF9800;
-}
-
-.main-image {
-	/*display: block;*/
-	width: 100%;
-	height: 90vh;
-	object-fit: cover;
-	margin-top: 75px;
-	/*position: relative;*/
-}
-
-div.background-main-image {
-	display: block;
-	background: center / cover no-repeat url("image/photo-large/groupe.jpg");
-	width: 100%;
-	background-position: center 25%;
-	/*height: 90vh;*/
-	/*background-color: yellow;*/
-	/*border: 3px solid blue;*/
 }
 
 @media only screen and (max-width: 550px) {
@@ -335,9 +336,13 @@ ul#menu-vertical.menu-flex {
 	/*border: 2px solid red;*/
 }
 
-
-
-
+@media screen and (max-width: 450px) {
+	.tickets {
+		flex-direction: column;
+		align-items: center;
+		line-height: 2em;
+	}
+}
 
 /* button => https://www.w3schools.com/howto/howto_css_animate_buttons.asp*/
 
@@ -381,6 +386,11 @@ ul#menu-vertical.menu-flex {
   right: 0;
 }
 
+#tour a:hover {
+	text-decoration: none;
+	color: white;
+}
+
 
 @media only screen and (max-width: 830px) {
 	.tickets, .button {
@@ -388,6 +398,10 @@ ul#menu-vertical.menu-flex {
 	}
 	.button {
 		width: 140px;
+	}
+	div.tickets span {
+		padding: 0 5px;
+		text-align : center;
 	}
 }
 
@@ -397,6 +411,21 @@ ul#menu-vertical.menu-flex {
 	}
 	.button {
 		width: 120px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.tickets, .button {
+		font-size: 15px !important;
+	}
+	.button {
+		width: 110px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.button {
+		/*width: 50%;*/
 	}
 }
 
@@ -771,9 +800,9 @@ ul#menu-vertical.menu-flex {
 }
 
 .rectangle-photos {
-	/*background-color: orange;*/
 	width: 100%;
 	height: 100%;
+	margin: auto;
 	/*border: 3px solid red;*/
 }
 
@@ -860,6 +889,26 @@ ul#menu-vertical.menu-flex {
 @media only screen and (max-width: 700px){
   .modal-content {
     width: 50%;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .rectangle-photos {
+	width: 90%;
+	height: 90%;
+  }
+}
+@media only screen and (max-width: 400px){
+  .rectangle-photos {
+	width: 80%;
+	height: 80%;
+  }
+}
+
+@media only screen and (max-width: 350px){
+  .rectangle-photos {
+	width: 70%;
+	height: 70%;
   }
 }
 
@@ -1165,6 +1214,18 @@ form#mc-embedded-subscribe-form div.clear {
     }*/
     .w2 {
     	width: 3rem;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+    .w2 {
+    	width: 2.5rem;
+	}
+}
+
+@media only screen and (max-width: 400px) {
+    .w2 {
+    	width: 2rem;
 	}
 }
 
