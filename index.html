@@ -276,7 +276,7 @@
                 <form action="https://catrodeo.us4.list-manage.com/subscribe/post?u=361f58b13d23169917ba26f6a&amp;id=972ef4f895" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                   <div id="mc_embed_signup_scroll" class="form-follow form-follow1">
                   
-                  <div class="mc-field-group">
+                  <div id="mc-field-group" class="mc-field-group">
                     <label for="mce-EMAIL"></label>
                     <input type="email" value="" name="EMAIL" class="required email rectangle-mail" placeholder="Email Address" id="mce-EMAIL" required>
                   </div>
@@ -410,8 +410,8 @@ const messageErreurMailNonValide = document.getElementById("mce-error-response-m
 const messageSucces = document.getElementById("mce-success-response");
 
 const myCheck = document.getElementById("myCheckbox");
-
 const inputEmail = document.getElementById("mce-EMAIL");
+const divInputMail = document.getElementById("mc-field-group");
 
 // const buttonSubmit = document.getElementById("mc-embedded-subscribe");
 // buttonSubmit.addEventListener("click", e => {
@@ -426,15 +426,23 @@ const inputEmail = document.getElementById("mce-EMAIL");
 // });
 
 function afficheMessageSucces() {
+  divInputMail.classList.add("success");
   messageSucces.style.display = "inline";
+  setTimeout(() => {
+    messageSucces.style.display = "none";
+    divInputMail.classList.remove("success");
+  }, 20000);
 }
 
 function afficheMessageErreur(errorType) {
+  divInputMail.classList.add("error");
   const messageErreur = ((errorType === "mailNonValide") ? messageErreurMailNonValide : messageErreurCheckboxNonCocher);
   messageErreur.style.display = "inline";
   setTimeout(() => {
     messageErreur.style.display = "none";
-  }, 5000)
+    divInputMail.classList.remove("error");
+
+  }, 10000);
 }
 
 

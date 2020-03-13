@@ -1,7 +1,19 @@
+/*@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');*/
+
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+
+* {
+  /*box-sizing: border-box;*/
+}
+
 body {
 	color: white;
 	background-color: black;
-	font-family: "Open Sans";
+	font-family: 'Open Sans', sans-serif;
+	min-height: 100vh;
 	margin: 0;
 }
 
@@ -358,6 +370,7 @@ ul#menu-vertical.menu-flex {
   transition: all 0.5s;
   cursor: pointer;
   font-weight: 500;
+  outline: none;
   /*margin: 20px;*/
 }
 
@@ -544,6 +557,7 @@ ul#menu-vertical.menu-flex {
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
+  outline: none;
 }
 
 .view-more:hover {
@@ -685,6 +699,7 @@ ul#menu-vertical.menu-flex {
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
+  outline: none;
 }
 
 .download:hover {
@@ -968,7 +983,6 @@ ul#menu-vertical.menu-flex {
 }
 
 
-
 input[type=submit] {
   background-color: #ff5722;
   border-radius: 5px;
@@ -979,11 +993,10 @@ input[type=submit] {
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
-
   font-size: 25px;
   font-weight: 500;
-
   transition: 0.5s;
+  outline: none;
 }
 
 input[type=text], input[type=email] {
@@ -1000,12 +1013,18 @@ input[type=submit]:hover {
   color: white;
 }
 
+#contact input:focus {
+	/*outline: 0;
+	border-color: #bdbdbd;*/
+}
+
 /* ---CONTACT--- */
 
 
 
 
 /* FOLLOW */
+
 
 
 .rectangle-mail#mce-EMAIL {
@@ -1112,6 +1131,7 @@ input[type=submit]:hover {
   font-weight: 500;
 }
 
+
 .form-follow {
 	display: flex;
 	align-items: center;
@@ -1135,7 +1155,15 @@ form#mc-embedded-subscribe-form div.clear {
 }
 
 
+div.mc-field-group.success input {
+  border: 2px solid var(--success-color) !important;
+  /*border-color: var(--success-color) !important;*/
+}
 
+div.mc-field-group.error input {
+  border: 2px solid var(--error-color) !important;
+  /*border-color: var(--error-color) !important;*/
+}
 
 
 
