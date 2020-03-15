@@ -136,7 +136,7 @@ header.main-page {
 
 div.background-main-image {
 	display: block;
-	background: center / cover no-repeat url("image/photo-large/groupe.jpg");
+	background: center center / cover no-repeat url("image/photo-large/groupe.jpg");
 	width: 100%;
 	/*margin: 0;
 	padding: 0;*/
@@ -177,6 +177,9 @@ div.background-main-image {
 	ul#menu-vertical.menu-flex {
 		font-size: 16px;
 	}
+	header.main-page {
+		height: 80vh;
+	}
 }
 
 @media only screen and (max-width: 730px) {
@@ -186,6 +189,9 @@ div.background-main-image {
 	/*.nav, .logo {
 		margin: 0 20px;
 	}*/
+	header.main-page {
+		height: 70vh;
+	}
 }
 
 @media only screen and (max-width: 545px) {
@@ -200,6 +206,15 @@ div.background-main-image {
 @media only screen and (max-width: 550px) {
 	div.background-main-image {	
 		/*margin-top: 80px;*/
+	}
+	header.main-page {
+		height: 60vh;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	header.main-page {
+		height: 50vh;
 	}
 }
 
@@ -373,6 +388,10 @@ ul#menu-vertical.menu-flex {
   outline: none;
   /*margin: 20px;*/
 }
+
+/*.button:active {
+	animated bounce;
+}*/
 
 .button span {
   cursor: pointer;
